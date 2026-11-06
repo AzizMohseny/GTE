@@ -41,7 +41,7 @@ The method divides a typeface into three layers:
 
 ### 4.1 Skeletons
 Skeletons are dotless base shapes, typically one per joining form. The naming convention is `<letter>.<form>.skl`, for example `beh.init.skl`. A letter with four joining forms may need up to four skeletons. Skeletons can also use additional axes in a variable font. Decomposition can continue into smaller components—for example, decomposing `hah-ar.init` into `hahHead` plus a `kashida` component—which can be useful in calligraphic type design.
-
+![Skeleton Decomposition](./asset/01.jpg)
 ### 4.2 Marks
 Marks are dots, diacritics, and other small components, drawn once and reused. The naming convention is `<name>.<position>.mrk`, for example `dotbelow.mrk`. A mark can be placed on many skeletons without being duplicated.
 
@@ -49,7 +49,7 @@ Marks are dots, diacritics, and other small components, drawn once and reused. T
 Anchors are named points on skeletons and marks that define attachment positions. The convention used by this project includes T (top-middle), B (bottom-middle), R, S, D, E and their underscore-prefixed counterparts.
 
 An encoded letter such as BEH can be represented by a glyph with an empty outline. At shaping time, GSUB replaces it with a skeleton plus a mark—for example, `behDotless.init.skl` plus `dotbelow.mrk`. GPOS then positions the mark using anchors.
-
+![Marks and Anchors Positioning](./asset/02.jpg)
 Because dots and diacritics are reusable marks, the glyph inventory does not need to multiply for every letter that carries them: one skeleton plus one mark glyph can cover every letter that shares those components. A quantitative comparison with conventional fonts is deferred until the full set of contextual alternates has been designed.
 
 ### 4.4 Kashida and line justification
